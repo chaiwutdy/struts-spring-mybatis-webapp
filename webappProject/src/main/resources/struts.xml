@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"   
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+  
+<struts>
+    <package name="default" extends="struts-default,json-default">
+    	<result-types>
+       	<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+     	</result-types>
+      
+       <action name="">
+       	<result type="tiles">home</result>
+           <!-- <result>/WEB-INF/jsp/index.jsp</result> -->
+       </action>
+        
+        <!-- <action name="strutsAction" class="com.action.StrutsAction" method="execute">
+          <result name="input">/WEB-INF/jsp/index.jsp</result> 
+          <result name="success">/WEB-INF/jsp/success.jsp</result>    
+         	<result name="welcome" type="tiles">welcome</result>      
+       	</action>  -->
+       	
+       	<action name="strutsAction" class="strutsAction" method="execute">
+         	<result name="welcome" type="tiles">welcome</result>      
+       	</action> 
+       	
+       	<action name="getTodayTestAction" class="strutsAction" method="getTodayTest">
+         	<result name="todayTest" type="tiles">todayTest</result>      
+       	</action>
+       	
+       	<action name="getTodayTestDataAction" class="strutsAction" method="getTodayTestData">
+       		<result name="success" type="json"></result>
+       	</action>  
+       	
+    </package>
+</struts>
